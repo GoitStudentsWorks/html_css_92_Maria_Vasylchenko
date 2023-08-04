@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg" href="/html_css_92_Maria_Vasylchenko/assets/favicon-d95b6e30.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YahtAdventures</title>
+    
+
+    <!-- modern-normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script type="module" crossorigin src="/html_css_92_Maria_Vasylchenko/assets/index-e2d656af.js"></script>
+    <link rel="stylesheet" href="/html_css_92_Maria_Vasylchenko/assets/index-5fe57b6e.css">
+  </head>
+  <body>
+    <!-- Kateryna Bahrin -->
+    <header>
+  <div class="header-container container">
+    <nav class="header-nav">
+      <a class="header-logo-link" href="./index.html">
+        <img
+          class="yacht-icon header-yacht-icon"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKXSURBVHgBpZTNTttAEMdn1imhaiXSJ8B9A869YITUQ3sAzpUgbwB9gQb1BeANOPReeqmiSgU3iUg/XoLmCer0FIK90//s2k5II/LBStbs2ju/nfnPrImWGJ/jeGOefYaWGNZQ/TyOa7P2LQVnoTWYmdEvDG+247ragOndrL0Lwb9ctRqGzTr7ZTRLmrnhzU4nghzHlixnIspnOB8+GN78HoePjD0TkvyNjx2r6MHwFQoaAIUOauHEJBigy+bHy8vNpeEXV+06Mx/gUZqy1bA3sFb2loKrHOi7BiJkcTozGWMkK+VBIsz7Z+fTC3svfJUrZ4g4VAV85CTWAod5vlZpnj1dTTcWgsc/Ow1EG+mcvcaIXLhw8Ot8VLgxN1zlECvHRHfbQzPwmgsXkeuJViiaJs1UeJWC+A70vx0uFa0DecWIHj/JDmbC4x/tE5jQeRRDISPdSSaOc11Jsnsv/Gu3vYuNR95hDICD8rPYL3NJ3MuisBx9aDajqfBmHIeBMScTh0v+FLGKtuJ4xEotOingys64c6WYVKvBOsr1CbtqxrWfu4E1xFqDf8j5AdqKec9reb3Ns7RW6jBvy4Qvuu0jhRgTXKujNfw7kEBumHuDwSDZ29pKyuzQRYMBJSuoyRD/c+zXDllLU1uzwjX80EIA6m9eb/ccPMZv01YDXBbaGdN0XHOtX2JF+nBOMsyzTBJ8Tm5T20NrSirUY8t/buWmn6b4F5mV6+Hwb79siYtu6xTQwwKsOhYXBWA8Lm3KrJ9nvoMEa87G31vvG4h5XhZ0+8XmEXriuCygB+fhs7ssPjEuSz26paO21QbCie9VGqaJ0frVOUTap6Uk2G9dlCypKybDF7XBqzRzFtFan5l75Nv+q5db6vwPqoaB/6ekfYcAAAAASUVORK5CYII="
+          alt="yacht-icon"
+        />
+        <span class="header-logo-text">Yacht Adventures</span>
+      </a>
+
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#yachts">Yachts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#reviews">Reviews</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="menu-toggle js-open-menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="menu-toggle-icon" width="24" height="24">
+        <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-modal-menu"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+
+<div class="menu-container js-menu-container menu-decor" id="mobile-menu">
+  <div class="modal-nav">
+    <a class="header-logo-link logo-mobile link" href="./index.html">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG+SURBVHgBpZM/TisxEMbns8Ofp1ewnODlCI+WgqxESQE9BdwgcAJyA7hBKiqKiAKQiMCIIKDkCOwNtgSxnmHsZJeN+JeAtZbt3Znfft/YJpqwnV5ftr76bmjCxh5LPeeSX4HOnGvC0IIl3v4xKEJmsDcKX/8xaGbW7uvQjAtQq9d36dQgdz9oCyiqYCaIENhwOhUoWGKRA9LsUaROlERoTwWam7cOFFI1V+qBkhz1++lEIHc3CMVtlmJC4xITOkz7W1B/MEiFpBMXiI+8+xNTq9sbP1NjoFAX25Bu/V2w9kbSaVzI4p+/L1ufgmbnbbD0r06p21MKgkRC3MCND0Hu7mZLY7aHhkoBIXP4Imx/ZVJEUaZ1eHL+fwzk4h2K5+NKkx41MH/zMiQZM8LIcM3CIIPqpDcubq93GJIYwQPAVwWZzFJDnglZjLBPZJmSgilXS5mxWOCCE5W4KAZVwRHU8JztArSB4F2ksqYHkrzuu2fJC+0slLP3+UscKS+8ZBy0EY6rJFW2bwx2pFZdnYqPMIEmaQpJ4Rm+HDn+7LFBNq2Kvbq8sqv+O0GV9joMJVvKMoViA/HKkJHO5tpq9goLHuTe98aA8AAAAABJRU5ErkJggg==" alt="yacht-icon" />
+
+      <span class="header-logo-text">Yacht Adventures</span>
+    </a>
+    <button class="menu-toggle js-close-menu">
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-x-close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="mobile-menu-nav">
+    <ul class="mobile-menu">
+      <li class="mobile-item">
+        <a class="mobile-link js-close-menu-1" href="#about"> About </a>
+      </li>
+      <li class="mobile-item">
+        <a class="mobile-link js-close-menu-2" href="#yachts"> Yachts </a>
+      </li>
+      <li class="mobile-item">
+        <a class="mobile-link js-close-menu-3" href="#reviews"> Reviews </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="blur-box">
+    <div class="blur-circle1"></div>
+    <div class="blur-circle2"></div>
+  </div>
+</div>
+
+    <main>
+      <!-- Olha Buzak -->
+      <section class="hero" id="hero">
+  <div class="div-hero container">
+    <div class="hero-text">
+      <h1 class="hero-title">
+        Explore the High Seas with
+        <span class="hero-title-italic">Our Luxury Yacht</span> Rentals
+      </h1>
+      <p class="hero-description">
+        Experience the freedom and luxury of yachting on the open seas. Choose
+        from our top-of-the-line yachts and embark on an unforgettable journey
+        surrounded by breathtaking views and state-of-the-art amenities.
+      </p>
+      <div class="hero-buttons">
+        <button class="button-started">Get Started</button>
+        <a class="link-explore" href="#services">Explore</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-circle"></div>
+      <div class="hero-clients">
+        <div class="hero-faces">
+          <div class="heroclient face1"></div>
+          <div class="heroclient face2"></div>
+          <div class="heroclient face3"></div>
+        </div>
+        <p class="hero-text-clients">OUR CLIENTS</p>
+      </div>
+      <img
+        class="hero-img-man"
+        srcset="/html_css_92_Maria_Vasylchenko/assets/man@1x-e1b34cb0.jpg 1x, /html_css_92_Maria_Vasylchenko/assets/man@2x-ae5c07ac.jpg 2x"
+        alt="man"
+        src="/html_css_92_Maria_Vasylchenko/assets/man@1x-e1b34cb0.jpg"
+      />
+      <img
+        class="hero-img-yaht"
+        srcset="/html_css_92_Maria_Vasylchenko/assets/yaht@1x-180b4d5b.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht@2x-a4b3f4d1.png 2x"
+        alt="yaht"
+        src="/html_css_92_Maria_Vasylchenko/assets/yaht@1x-180b4d5b.png"
+      />
+      <div class="hero-card-description">
+        <h2 class="hero-price">$12M</h2>
+        <p class="hero-card-text">
+          Book now and make your dream yacht rental a reality
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- Nika Zain -->
+      <section class="about-block" id="about">
+  <div class="about-container container">
+    <div class="about-text-container">
+      <p class="about-text">
+        <span class="about-span">Yacht Adventures</span> fleet is here to take
+        you on the ultimate adventure. Each yacht is hand-picked for its
+        comfort, style, and performance.
+      </p>
+      <ul class="about-list">
+        <li class="about-item about-item-first">
+          From spacious decks to state-of-the-art technology, our yachts are
+          designed to provide the perfect blend of luxury and functionality.
+          Take a look at our selection below and choose the yacht that matches
+          your needs and preferences.
+        </li>
+        <li class="about-item about-item-last">
+          No matter which yacht you choose, our experienced crew will ensure
+          that your journey is smooth and enjoyable. Book now and get ready for
+          an unforgettable adventure on the high seas.
+        </li>
+      </ul>
+    </div>
+    <ul class="about-img-list">
+      <li class="about-img-item">
+        <picture>
+          <source
+            media="(min-width: 1280px)"
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht1-desktop@1x-565385f6.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht1-desktop@2x-f207b6aa.png 2x"
+            type="image/png"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht1-tablet@1x-6a0c912e.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht1-tablet@2x-afc7737d.png 2x"
+            type="image/png"
+          />
+          <source
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht1-phone@1x-c8125504.png , /html_css_92_Maria_Vasylchenko/assets/yaht1-phone@2x-a756f33e.png 2x"
+            type="image/png"
+          />
+          <img
+            class="about-img about-img-first"
+            src="/html_css_92_Maria_Vasylchenko/assets/yaht1-desktop@1x-565385f6.png"
+            alt="yaht1"
+          />
+        </picture>
+      </li>
+      <li class="about-img-item">
+        <picture>
+          <source
+            media="(min-width: 1280px)"
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht2-tablet-desktop@1x-e606efe6.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht2-tablet-desktop@2x-4e1dff5e.png 2x"
+            type="image/png"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht2-tablet-desktop@1x-e606efe6.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht2-tablet-desktop@2x-4e1dff5e.png 2x"
+            type="image/png"
+          />
+          <source
+            media="(min-width: 320px)"
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht2-phone@1x-0148fba1.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht2-phone@2x-fadc00aa.png 2x"
+            type="image/png"
+          />
+          <img
+            class="about-img about-img-second"
+            src="/html_css_92_Maria_Vasylchenko/assets/yaht2-tablet-desktop@1x-e606efe6.png"
+            alt="yaht2"
+          />
+        </picture>
+      </li>
+
+      <li class="about-img-item">
+        <picture>
+          <source
+            media="(min-width: 1280px)"
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht3-all@1x-9e9c9ee0.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht3-all@2x-43324e9f.png 2x"
+            type="image/png"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht3-all@1x-9e9c9ee0.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht3-all@2x-43324e9f.png 2x"
+            type="image/png"
+          />
+          <source
+            media="(min-width: 320px)"
+            srcset="/html_css_92_Maria_Vasylchenko/assets/yaht3-all@1x-9e9c9ee0.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht3-all@2x-43324e9f.png 2x"
+            type="image/png"
+          />
+          <img
+            class="about-img about-img-last"
+            src="/html_css_92_Maria_Vasylchenko/assets/yaht3-all@1x-9e9c9ee0.png"
+            alt="yaht3"
+          />
+        </picture>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <!-- Midiya -->
+      
+<section class="YachtsBlock" id="yachts">
+    
+    <div class="YachtsBlock-container container">
+
+      <div class="YachtsBlock-blur">
+          <div class="YachtsBlock-blurCircle"></div>
+          <div class="YachtsBlock-blurCircle-small"></div>
+      </div>
+
+      <h2 class="YachtsBlock-title">Choose your dream yacht and sail away into the sunset
+        </h2>
+
+      <div class="waves">
+
+        <img class="waves-png" src="/html_css_92_Maria_Vasylchenko/assets/LooperGroup-8a40e31e.png" width="1508" alt="waves">
+      </div>
+
+      <a href="#rent" class="YachtsBlock-button"> 
+        Yacht rental    
+      </a>
+
+        <div class="swiper-container">
+
+            <a href="#" class="swiper-button left">
+              <svg class="arrow" width="18" height="8">
+                <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-arrow-left"></use>
+              </svg>
+            </a>
+
+            <!-- SLIIDE 1 -->
+            <div class="first">
+
+              <div class="swiper-slide first">
+
+           <picture class="picture">
+              <source
+                  srcset="/html_css_92_Maria_Vasylchenko/assets/yaht.desk1-1x-1705f60a.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht.desk1-2x-97718420.png 2x"
+                  media="(min-width: 1280px)"
+                  type="image/png"
+                />
+              <source
+                  srcset="/html_css_92_Maria_Vasylchenko/assets/yaht.tab1-1x-b73ff650.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht.tab1-2x-02c6e96a.png 2x"
+                  media="(min-width: 768px)"
+                  type="image/png"
+                />
+                <source
+                  srcset="/html_css_92_Maria_Vasylchenko/assets/yacht.mob1-1x-f234efa1.png 1x, /html_css_92_Maria_Vasylchenko/assets/yacht.mob1-2x-83b79057.png 2x"
+                  media="(min-width: 320px)"
+                  type="image/png"
+                />
+                <img
+                  src="/html_css_92_Maria_Vasylchenko/assets/yacht.mob1-1x-f234efa1.png"
+                  alt="Yaht ARROW"
+                />
+           </picture>
+
+
+          <div class="swiper-title">
+            <h3 class="yacht-name">Arrow</h3>
+            <p class="luxury-yachts">LUXURY YAHTS</p>
+          </div>
+
+          <table>
+            <tr>
+              <td>LENGTH</td>
+              <td class="second-row">48m(155ft)</td>
+            </tr>
+            <tr>
+              <td>BUILDER</td>
+              <td class="second-row">Admiral</td>
+            </tr>
+            <tr>
+              <td>BUILT</td>
+              <td class="second-row">2021</td>
+            </tr>
+            <tr>
+              <td>GUESTS</td>
+              <td class="second-row">11 in 5 cabins</td>
+            </tr>
+            <tr>
+              <td>PRICE</td>
+              <td class="second-row">€33,500,000</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+            <!-- SLIDE 2 -->
+            <div class="second">
+            <div class="swiper-slide">
+            <picture class="picture">
+              <source
+                  srcset="/html_css_92_Maria_Vasylchenko/assets/yaht.desk2-1x-e1387c0a.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht.desk2-2x-19e606de.png 2x"
+                  media="(min-width: 1280px)"
+                  type="image/png"
+                />
+              <source
+                  srcset="/html_css_92_Maria_Vasylchenko/assets/yaht.tab2-1x-e7244998.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht.tab2-2x-5007338c.png 2x"
+                  media="(min-width: 768px)"
+                  type="image/png"
+                />
+                <source
+                  srcset="/html_css_92_Maria_Vasylchenko/assets/yacht.mob2-1x-e8e7d444.png 1x, /html_css_92_Maria_Vasylchenko/assets/yacht.mob2-2x-701e9aae.png 2x"
+                  media="(min-width: 320px)"
+                  type="image/png"
+                />
+                <img
+                  src="/html_css_92_Maria_Vasylchenko/assets/yacht.mob2-1x-e8e7d444.png"
+                  alt="Yaht BENETTI OASIS"
+                />
+            </picture>
+
+
+          <div class="swiper-title">
+            <h3 class="yacht-name">BENETTI OASIS 40M...</h3>
+            <p class="luxury-yachts">LUXURY YAHTS</p>
+          </div>
+
+              <table>
+                <tr>
+                    <td>LENGTH</td>
+                    <td class="second-row">41m (133ft)</td>
+                </tr>
+                <tr>
+                    <td>SHIPYARD</td>
+                    <td class="second-row">Benetti</td>
+                </tr>
+                <tr>
+                    <td>BUILT </td>
+                    <td class="second-row">2025</td>
+                </tr>
+                <tr>
+                    <td>GUESTS </td>
+                    <td class="second-row">10 in 5 cabins</td>
+                </tr>
+                <tr>
+                    <td>PRICE</td>
+                    <td class="second-row">€23,210,000</td>
+                </tr>
+              </table>
+            </div>
+            </div>
+
+
+          <!--  SLIDE 3 --> 
+            <div class="third">
+              <div class="swiper-slide">
+                <picture class="picture">
+                  <source
+                    srcset="/html_css_92_Maria_Vasylchenko/assets/yaht.desk3-1x-10f54419.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht.desk3-2x-6342176f.png 2x"
+                    media="(min-width: 1280px)"
+                    type="image/png"
+                    />
+                  <source
+                    srcset="/html_css_92_Maria_Vasylchenko/assets/yaht.tab3-1x-640f6a09.png 1x, /html_css_92_Maria_Vasylchenko/assets/yaht.tab3-2x-40919b43.png 2x"
+                    media="(min-width: 768px)"
+                    type="image/png"
+                  />
+                  <source
+                    srcset="/html_css_92_Maria_Vasylchenko/assets/yacht.mob3-1x-a487e7b6.png 1x, /html_css_92_Maria_Vasylchenko/assets/yacht.mob3-2x-01c8d00e.png 2x"
+                    media="(min-width: 320px)"
+                    type="image/png"
+                  />
+                  <img
+                    src="/html_css_92_Maria_Vasylchenko/assets/yacht.mob3-1x-a487e7b6.png"
+                    alt="Yaht BELLE ANNA"
+                  />
+                </picture>
+
+                  <div class="swiper-title">
+                    <h3 class="yacht-name">BELLE ANNA</h3>
+                    <p class="luxury-yachts">LUXURY YAHTS</p>
+                  </div>
+
+                <table>
+                  <tr>
+                      <td>LENGTH </td>
+                      <td class="second-row">50m(155ft)</td>
+                  </tr>
+                  <tr>
+                      <td>SHIPYARD</td>
+                      <td class="second-row">ISA</td>
+                  </tr>
+                  <tr>
+                      <td>BUILT</td>
+                      <td class="second-row">2012</td>
+                  </tr>
+                  <tr>
+                      <td>GUESTS</td>
+                      <td class="second-row">12 in 6 cabins</td>
+                  </tr>
+                  <tr>
+                      <td>PRICE</td>
+                      <td class="second-row">€21,000,000</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <a href="#" class="swiper-button right">
+              <svg class="arrow" width="18" height="8">
+                  <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-arrow-right"></use>
+                </svg>
+            </a>
+
+            <div class="swiper-buttons-container">
+                <a href="#" class="swiper-button">
+                  <svg class="arrow" width="18" height="8">
+                    <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-arrow-left"></use>
+                  </svg>
+                </a>
+  
+                <a href="#" class="swiper-button">
+                  <svg class="arrow" width="18" height="8">
+                    <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-arrow-right"></use>
+                  </svg>
+                </a>
+            </div>
+
+        </div>
+
+      <!-- Nazar Natin -->
+      <section class="services" id="services">
+  <div class="container services-container">
+    <h2 class="visually-hidden">Our services</h2>
+    <ul class="services-list">
+      <li class="services-sample">
+        <a href="#" class="services-link">
+          <picture>
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/diving-desktop@x1-31a87ddc.webp 1x, /html_css_92_Maria_Vasylchenko/assets/diving-desktop@x2-5564dd59.webp 2x"
+              media="(min-width: 1280px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/diving-tablet@x1-f8de08de.webp 1x, /html_css_92_Maria_Vasylchenko/assets/diving-tablet@x2-71b856bd.webp 2x"
+              media="(min-width: 768px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/diving-mobile@x1-47913b69.webp 1x, /html_css_92_Maria_Vasylchenko/assets/diving-mobile@x2-04038499.webp 2x"
+              media="(min-width: 320px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/diving-desktop@x1-6c81f110.png 1x, /html_css_92_Maria_Vasylchenko/assets/diving-desktop@x2-bfe93a66.png 2x"
+              media="(min-width: 1280px)"
+              type="image/png"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/diving-tablet@x1-b7826ffd.png 1x, /html_css_92_Maria_Vasylchenko/assets/diving-tablet@x2-8fb4b83f.png 2x"
+              media="(min-width: 768px)"
+              type="image/png"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/diving-mobile@x1-fe415e63.png 1x, /html_css_92_Maria_Vasylchenko/assets/diving-mobile@x2-6b84ba2a.png 2x"
+              media="(min-width: 320px)"
+              type="image/png"
+            />
+            <img
+              src="/html_css_92_Maria_Vasylchenko/assets/diving-desktop@x1-6c81f110.png"
+              alt="Diving"
+              class="services-img"
+            />
+          </picture>
+          <p class="services-title">Diving</p>
+        </a>
+      </li>
+      <li class="services-sample">
+        <a href="#" class="services-link">
+          <picture>
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/fishing-desktop@x1-d7752b7d.webp 1x, /html_css_92_Maria_Vasylchenko/assets/fishing-desktop@x2-82299e59.webp 2x"
+              media="(min-width: 1280px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/fishing-tablet@x1-b047675c.webp 1x, /html_css_92_Maria_Vasylchenko/assets/fishing-tablet@x2-465caca9.webp 2x"
+              media="(min-width: 768px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/fishing-mobile@x1-64bd2f30.webp 1x, /html_css_92_Maria_Vasylchenko/assets/fishing-mobile@x2-1efce6ed.webp 2x"
+              media="(min-width: 320px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/fishing-desktop@x1-b8c7c30e.png 1x, /html_css_92_Maria_Vasylchenko/assets/fishing-desktop@x2-974d23c5.png 2x"
+              media="(min-width: 1280px)"
+              type="image/png"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/fishing-tablet@x1-3f34f6d8.png 1x, /html_css_92_Maria_Vasylchenko/assets/fishing-tablet@x2-845e213c.png 2x"
+              media="(min-width: 768px)"
+              type="image/png"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/fishing-mobile@x1-459ba476.png 1x, /html_css_92_Maria_Vasylchenko/assets/fishing-mobile@x2-2addca1c.png 2x"
+              media="(min-width: 320px)"
+              type="image/png"
+            />
+            <img
+              src="/html_css_92_Maria_Vasylchenko/assets/fishing-desktop@x1-b8c7c30e.png"
+              alt="Fishing"
+              class="services-img"
+            />
+          </picture>
+          <p class="services-title">Fishing</p>
+        </a>
+      </li>
+      <li class="services-sample">
+        <a href="#" class="services-link">
+          <picture>
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/sunbathing-desktop@x1-dde5bcd2.webp 1x, /html_css_92_Maria_Vasylchenko/assets/sunbathing-desktop@x2-1456611c.webp 2x"
+              media="(min-width: 1280px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/sunbathing-tablet@x1-df0f2bc8.webp 1x, /html_css_92_Maria_Vasylchenko/assets/sunbathing-tablet@x2-218f15c2.webp 2x"
+              media="(min-width: 768px)"
+              type="image/webp"
+            />
+            <source
+              srcset="data:image/webp;base64,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 1x, /html_css_92_Maria_Vasylchenko/assets/sunbathing-mobile@x2-01dd94d1.webp 2x"
+              media="(min-width: 320px)"
+              type="image/webp"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/sunbathing-desktop@x1-8ff93764.png 1x, /html_css_92_Maria_Vasylchenko/assets/sunbathing-desktop@x2-83daaa18.png 2x"
+              media="(min-width: 1280px)"
+              type="image/png"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/sunbathing-tablet@x1-fa4aba1c.png 1x, /html_css_92_Maria_Vasylchenko/assets/sunbathing-tablet@x2-6a980ba3.png 2x"
+              media="(min-width: 768px)"
+              type="image/png"
+            />
+            <source
+              srcset="/html_css_92_Maria_Vasylchenko/assets/sunbathing-mobile@x1-6a9f651d.png 1x, /html_css_92_Maria_Vasylchenko/assets/sunbathing-mobile@x2-0d4c2340.png 2x"
+              media="(min-width: 320px)"
+              type="image/png"
+            />
+            <img
+              src="/html_css_92_Maria_Vasylchenko/assets/sunbathing-desktop@x1-8ff93764.png"
+              alt="Sunbathing"
+              class="services-img"
+            />
+          </picture>
+          <p class="services-title">Sunbathing</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <!-- Anastasiia Nikolaienko -->
+      <section class="rent-block" id="rent">
+  <div class="container-blur">
+    <div class="rent-container container">
+      <div class="rent-img-container">
+        <h2 class="rent-block-title">Rent a yacht now</h2>
+        <picture>
+          <source
+            srcset="/html_css_92_Maria_Vasylchenko/assets/rent_yaht_desk@1x-e0431930.png 1x, /html_css_92_Maria_Vasylchenko/assets/rent_yaht_desk@2x-f0c653f5.png 2x"
+            media="(min-width: 1280px)"
+            type="image/png"
+          />
+          <source
+            srcset="/html_css_92_Maria_Vasylchenko/assets/rent_yaht_tab@1x-729b9a0e.png 1x, /html_css_92_Maria_Vasylchenko/assets/rent_yaht_tab@2x-5b97c1f7.png 2x"
+            media="(min-width: 768px)"
+            type="image/png"
+          />
+          <source
+            srcset="/html_css_92_Maria_Vasylchenko/assets/rent_yaht_mob@1x-88da11fe.png 1x, /html_css_92_Maria_Vasylchenko/assets/rent_yaht_mob@2x-71c63f94.png 2x"
+            media="(min-width: 320px)"
+            type="image/png"
+          />
+          <img
+            src="/html_css_92_Maria_Vasylchenko/assets/rent_yaht_desk@1x-e0431930.png"
+            alt="Yacht in the sea"
+            class="rent-img"
+          />
+        </picture>
+      </div>
+
+      <!-- Form section -->
+      <form class="form-block" autocomplete="off">
+        <div class="form-container">
+          <label class="form-label" for="user-name">Full Name</label>
+          <div class="input-container name-container">
+            <input
+              class="form-input"
+              type="text"
+              id="user-name"
+              name="user-name"
+              required
+              title="First and Last Name with a space in between"
+              pattern="(^[a-zA-Z]{1,30} [a-zA-Z]{1,30}$)"
+            />
+            <span id="name-error"></span>
+          </div>
+        </div>
+        <div class="form-container">
+          <label class="form-label" for="user-mail">Email</label>
+          <div class="input-container">
+            <input
+              class="form-input"
+              type="email"
+              id="user-mail"
+              name="user-mail"
+              required
+            />
+            <span id="mail-error"></span>
+          </div>
+        </div>
+        <div class="form-container">
+          <label class="form-label" for="user-phone">Phone Number</label>
+          <div class="input-container">
+            <input
+              class="form-input"
+              type="tel"
+              id="user-phone"
+              name="user-phone"
+              required
+              title="Begin with +380"
+              pattern="(^[+]380\d{9}$)"
+            />
+            <span id="phone-error"></span>
+          </div>
+        </div>
+        <div class="comm-container">
+          <label class="form-label" for="user-comment">Comment</label>
+          <textarea
+            class="form-input comm"
+            name="user-comment"
+            id="user-comment"
+            rows="4"
+          ></textarea>
+        </div>
+        <button class="form-btn-submit" type="submit" data-modal-open>
+          Send
+          <svg class="form-btn-icon" width="18" height="8.66">
+            <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-arrow-rightbtn"></use>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Modal window -->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal-window">
+          <button type="button" class="modal-btn" data-modal-close>
+            <svg class="modal-icon" width="24" height="24">
+              <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-x-close"></use>
+            </svg>
+          </button>
+          <div class="modal-img-container">
+            <picture>
+              <source
+                srcset="/html_css_92_Maria_Vasylchenko/assets/pop-up-yacht-tab@1x-e5c263ba.png 1x, /html_css_92_Maria_Vasylchenko/assets/pop-up-yacht-tab@2x-aca79f0f.png 2x"
+                media="(min-width: 768px)"
+                type="image/png"
+              />
+              <source
+                srcset="/html_css_92_Maria_Vasylchenko/assets/pop-up-yacht-mobile@1x-80959d92.png 1x, /html_css_92_Maria_Vasylchenko/assets/pop-up-yacht-mobile@2x-fc2ec82b.png 2x"
+                media="(min-width: 320px)"
+                type="image/png"
+              />
+              <img
+                class="modal-img"
+                src="/html_css_92_Maria_Vasylchenko/assets/pop-up-yacht-tab@1x-e5c263ba.png"
+                alt="Luxury Yacht"
+                width="287"
+                height="149"
+              />
+            </picture>
+            <p class="modal-tnx">Thank you</p>
+            <p class="modal-text">
+              Thank you for choosing Yacht Adventures, your booking details have
+              been received and our team will be in touch shortly to confirm
+              your reservation and provide any additional information or
+              assistance you may need.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- Veronika Lykhovoz -->
+      <section class="reviews-section" id="reviews">
+  <div class="block-review-container container">
+    <div class="block-review-enter">
+      <h3 class="block-review-title">
+        <span class="review-title-accent">Yacht Adventures</span>
+        take pride in providing the best possible service and experience to our
+        customers
+      </h3>
+      <p class="block-review-desk">
+        Our customers have enjoyed unforgettable moments on our yachts. Don't
+        just take our word for it - read on to find out what they have to say
+        about their journey with us.
+      </p>
+    </div>
+    <ul class="block-review-list">
+      <li class="block-review-item">
+        <img
+          class="block-review-img"
+          srcset="/html_css_92_Maria_Vasylchenko/assets/img-1@1x-4cf264bc.png 1x, /html_css_92_Maria_Vasylchenko/assets/img-1@2x-bbdaf04c.png 2x"
+          src="/html_css_92_Maria_Vasylchenko/assets/img-1@1x-4cf264bc.png"
+          width="56"
+          height="56"
+          alt="Review of John Wax"
+        />
+        <p class="review-people-name">John Wax</p>
+        <p class="review-desk">
+          I rented the Lagoon 620 with my family for a week-long vacation and it
+          was the best decision ever. The yacht was spacious, comfortable, and
+          luxurious, and the crew took care of everything.
+        </p>
+      </li>
+      <li class="block-review-item item-hidden-mob">
+        <img
+          class="block-review-img"
+          srcset="/html_css_92_Maria_Vasylchenko/assets/img-2@1x-e3103ba4.png 1x, /html_css_92_Maria_Vasylchenko/assets/img-2@2x-ba455acf.png 2x"
+          src="/html_css_92_Maria_Vasylchenko/assets/img-2@1x-e3103ba4.png"
+          width="56"
+          height="56"
+          alt="Review of Victoria Romashenko"
+        />
+        <p class="review-people-name">Victoria Romashenko</p>
+        <p class="review-desk">
+          The Sunseeker Manhattan 66 was the perfect choice for our romantic
+          getaway. The yacht was beautifully designed, with all the amenities we
+          needed, and the crew was attentive and friendly.
+        </p>
+      </li>
+      <li class="block-review-item item-hidden-mob item-hidden-tab">
+        <img
+          class="block-review-img"
+          srcset="/html_css_92_Maria_Vasylchenko/assets/img-3@1x-31ebfaf7.png 1x, /html_css_92_Maria_Vasylchenko/assets/img-3@2x-98d1681b.png 2x"
+          src="/html_css_92_Maria_Vasylchenko/assets/img-3@1x-31ebfaf7.png"
+          width="56"
+          height="56"
+          alt="Review of Ihor Trachuk"
+        />
+        <p class="review-people-name">Ihor Trachuk</p>
+        <p class="review-desk">
+          The Azimut 80 was the most luxurious yacht I've ever been on. The
+          cabins were spacious and elegant, and the outdoor areas were perfect
+          for relaxing and entertaining. Worth every penny!
+        </p>
+      </li>
+    </ul>
+    <ul class="swiper-pagination-list">
+      <li>
+        <svg class="swiper-paginatiom-icon" width="13" height="13">
+          <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-swiper-dot"></use>
+        </svg>
+      </li>
+      <li>
+        <svg class="swiper-paginatiom-icon" width="13" height="13">
+          <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-swiper-dot"></use>
+        </svg>
+      </li>
+      <li>
+        <svg class="swiper-paginatiom-icon" width="13" height="13">
+          <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-swiper-dot"></use>
+        </svg>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    </main>
+    <footer>
+      <!-- Yurii Potanin -->
+      <div class="container footer-container">
+  <div class="footer-flex">
+    <div class="footer-logo">
+      <a href="./index.html" class="footer-logo-link">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="footer-logo-icon"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+        >
+          <mask
+            id="mask0_3500_65"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="18"
+            height="18"
+          >
+            <path
+              d="M0 14.412L4.0605 18H15.972L17.6775 15.6038L0.0015 14.412H0ZM10.4887 0V14.3048L15.9705 14.682L10.4887 0ZM9.74175 2.4105L1.82175 13.6807L9.74175 14.2155V2.4105Z"
+              fill="black"
+            />
+          </mask>
+          <g mask="url(#mask0_3500_65)">
+            <path d="M0 0H18V18H0V0Z" fill="url(#paint0_linear_3500_65)" />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_3500_65"
+              x1="7.66484"
+              y1="2.72868e-06"
+              x2="16.8581"
+              y2="0.347733"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#BEC7C2" />
+              <stop offset="1" stop-color="#A1B5BA" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <p class="footer-logo-text">yacht Adventures</p>
+      </a>
+    </div>
+    <div class="footer-nav">
+      <ul class="footer-nav-list">
+        <li class="footer-nav-item">
+          <a href="#about" class="footer-nav-link">About</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="#yachts" class="footer-nav-link">Yachts</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="#reviews" class="footer-nav-link">Reviews</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <p class="footer-social-title">We in social</p>
+      <ul class="footer-social-list">
+        <li class="footer-social-item">
+          <a href="./index.html" target="”_Top”" class="footer-social-link">
+            <!-- <svg class="footer-social-icon" width="32" height="32">
+                    <use href="./img/icons/icons.svg#icon-facebook"></use>
+                  </svg> -->
+            <div class="footer-social-bg-f"></div>
+          </a>
+        </li>
+        <li class="footer-social-item">
+          <a href="./index.html" target="”_Top”" class="footer-social-link">
+            <div class="footer-social-bg-inst"></div>
+          </a>
+        </li>
+        <li class="footer-social-item">
+          <a href="./index.html" target="”_Top”" class="footer-social-link">
+            <div class="footer-social-bg-y"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-privacy">
+    <p class="footer-privacy-text">2023. Yacht Adventures</p>
+    <p class="footer-privacy-text">Privacy Police</p>
+  </div>
+</div>
+<!-- <div class="footer-gradient"></div>
+      <div class="footer-gradient-right"></div> -->
+
+    </footer>
+
+    <!--button arrow-up-->
+    <div class="go-top">
+      <svg class="go-top-icon" width="68" height="68">
+        <use href="/html_css_92_Maria_Vasylchenko/assets/icons-ddd4bdbd.svg#icon-arrow-up"></use>
+      </svg>
+    </div>
+
+    
+  </body>
+</html>
